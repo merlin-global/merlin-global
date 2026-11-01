@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10243a">
+<meta name="description" content="MERLIN GLOBAL — discover products and connect with sellers worldwide.">
+<title>MERLIN GLOBAL | Buy Worldwide. Sell Worldwide.</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--navy:#10243a;--blue:#1769aa;--ink:#172536;--muted:#667789;--line:#e5ebf0;--bg:#f5f8fb;--white:#fff;--gold:#e6b85c}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+header{background:var(--navy);color:#fff;padding:16px max(18px,calc((100% - 1120px)/2));}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:850;letter-spacing:1.4px;font-size:21px}.brand span{color:var(--gold)}.tag{font-size:12px;color:#c9d5e0;margin-top:3px}
+nav{display:flex;gap:16px;align-items:center;font-size:13px}nav a{color:#e6edf4}
+.hero{background:linear-gradient(120deg,#10243a,#174b75);color:#fff;padding:44px 18px 38px}.hero-inner{max-width:1120px;margin:auto}.eyebrow{color:#f1ca78;font-size:12px;font-weight:750;letter-spacing:1.5px}.hero h1{font-size:clamp(30px,6vw,48px);line-height:1.08;margin:12px 0}.hero p{color:#d8e4ee;max-width:610px;line-height:1.6;margin:0 0 22px}.search{display:flex;max-width:720px;background:#fff;border-radius:12px;padding:6px;gap:6px}.search input{border:0;outline:0;min-width:0;flex:1;padding:12px;color:#172536}.search button,.primary{background:var(--gold);border:0;border-radius:9px;padding:11px 16px;font-weight:750;color:#1e2a35;cursor:pointer}
+.wrap{max-width:1120px;margin:auto;padding:26px 18px 60px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:10px 0 16px}.section-head h2{font-size:21px;margin:0}.muted{color:var(--muted);font-size:13px}
+.categories{display:flex;gap:9px;overflow:auto;padding:3px 0 16px}.chip{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;font-size:13px;cursor:pointer}.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.photo{height:150px;background:linear-gradient(135deg,#e7eef4,#d7e3ec);display:grid;place-items:center;font-size:44px}.card-body{padding:14px;display:flex;flex-direction:column;gap:7px;flex:1}.pill{font-size:10px;letter-spacing:.5px;font-weight:800;color:#1769aa;text-transform:uppercase}.card h3{font-size:15px;margin:0;line-height:1.35}.desc{font-size:12px;color:var(--muted);line-height:1.45;min-height:34px}.meta{font-size:12px;color:#526274}.price{font-weight:800;font-size:16px;margin-top:2px}.actions{display:flex;gap:7px;margin-top:auto;padding-top:8px}.actions button{flex:1;border:0;border-radius:8px;padding:10px 8px;font-size:12px;font-weight:750;cursor:pointer}.wa{background:#e6f6ed;color:#146c3b}.detail{background:#eef3f8;color:#25415c}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:30px}.panel h2{margin:0 0 7px;font-size:21px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;font-weight:700;color:#405367}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #dce4eb;border-radius:9px;background:#fff;outline-color:#1769aa}.field textarea{min-height:80px;resize:vertical}.full{grid-column:1/-1}.note{background:#fff8e8;border:1px solid #f0dfb8;padding:11px 13px;border-radius:10px;font-size:12px;color:#6b5427;line-height:1.5;margin:14px 0}
+footer{background:#0c1c2d;color:#c6d2dd;padding:26px 18px;font-size:12px}.foot{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.auth-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.auth-actions button{border:0;border-radius:9px;padding:11px 15px;font-weight:750;cursor:pointer}.secondary{background:#eaf0f5;color:#24394c}.status-message{font-size:13px;line-height:1.5;margin-top:10px;color:#405367;overflow-wrap:anywhere}.seller-dashboard{display:none}.seller-dashboard.show{display:block}.auth-status{padding:10px 12px;border-radius:9px;background:#eef6ff;color:#1b4c77;font-size:13px;margin:12px 0}.empty{padding:28px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #cbd6df;border-radius:12px;grid-column:1/-1}
+.modal{display:none;position:fixed;inset:0;background:#071522aa;z-index:5;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-box{background:#fff;border-radius:14px;padding:20px;max-width:440px;width:100%}.modal-box h3{margin-top:0}.close{float:right;border:0;background:#edf2f6;border-radius:50%;width:32px;height:32px;cursor:pointer}
+@media(max-width:700px){nav{gap:10px;font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{height:120px}.hero{padding-top:34px}.form-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.grid{grid-template-columns:1fr 1fr;gap:9px}.card-body{padding:10px}.photo{height:100px}.actions{flex-direction:column}.actions button{padding:9px}.brand{font-size:18px}nav a:nth-child(2){display:none}}
+</style>
+</head>
+<body>
+<header><div class="top"><a href="#" aria-label="MERLIN GLOBAL home"><div class="brand">MERLIN <span>GLOBAL</span><div class="tag">BUY WORLDWIDE. SELL WORLDWIDE.</div></div></a><nav><a href="#products">Buy Products</a><a href="#sell">Sell Products</a><a href="#about">About</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">INTERNATIONAL BUYING & SELLING</div><h1>Find products.<br>Connect with sellers.</h1><p>Discover products from businesses and suppliers around the world. Register to submit products for review and contact sellers directly.</p><div class="search"><input id="searchInput" type="search" placeholder="Search products, categories or countries…" aria-label="Search products"><button onclick="renderProducts()">Search</button></div></div></section>
+<main class="wrap">
+<section id="products"><div class="section-head"><div><h2>Explore products</h2><div class="muted">Browse sample listings — seller details are added after onboarding.</div></div><div class="muted" id="count"></div></div>
+<div class="categories" id="categories"></div><div class="grid" id="productGrid"></div></section>
+<section class="panel" id="sell"><h2>Sell on MERLIN GLOBAL</h2>
+<p class="muted">Register from any country, verify your email, then submit products for marketplace approval.</p>
+<div id="supabaseSetupNotice" class="note">Website connection needs setup: replace the two Supabase placeholders in this file with your Project URL and DEFAULT publishable key, then publish the file again.</div>
+<div id="authStatus" class="auth-status">You are not signed in.</div>
+<div id="authForms">
+  <form id="registerForm" class="form-grid">
+    <div class="field"><label for="regName">Full name *</label><input id="regName" required autocomplete="name" placeholder="Your full name"></div>
+    <div class="field"><label for="regCompany">Company name</label><input id="regCompany" autocomplete="organization" placeholder="Company or trading name"></div>
+    <div class="field"><label for="regCountry">Country *</label><input id="regCountry" required autocomplete="country-name" placeholder="Your country"></div>
+    <div class="field"><label for="regWhatsApp">WhatsApp number *</label><input id="regWhatsApp" required autocomplete="tel" placeholder="Country code + number"></div>
+    <div class="field"><label for="regEmail">Email *</label><input id="regEmail" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+    <div class="field"><label for="regPassword">Password *</label><input id="regPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters"></div>
+    <div class="full auth-actions"><button class="primary" type="submit">Create seller account</button></div>
+  </form>
+  <div class="panel" style="margin-top:16px">
+    <h3>Already registered?</h3>
+    <form id="loginForm" class="form-grid">
+      <div class="field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" required autocomplete="current-password"></div>
+      <div class="full auth-actions"><button class="secondary" type="submit">Sign in</button><button class="secondary" id="logoutButton" type="button" style="display:none">Sign out</button></div>
+    </form>
+  </div>
+</div>
+<div id="sellerDashboard" class="seller-dashboard">
+  <h3>Submit a product</h3>
+  <p class="muted">New listings stay pending until the marketplace administrator approves them.</p>
+  <form id="productForm" class="form-grid">
+    <div class="field"><label for="productName">Product name *</label><input id="productName" required maxlength="160"></div>
+    <div class="field"><label for="productCategory">Category *</label><select id="productCategory" required><option>Cosmetics</option><option>Industrial Materials</option><option>Textiles & Yarn</option><option>Automotive Parts</option><option>Electronics</option><option>Packaging & Paper</option><option>Other</option></select></div>
+    <div class="field"><label for="productPrice">Price / MOQ</label><input id="productPrice" placeholder="e.g. USD 3 per piece; MOQ 500"></div>
+    <div class="field"><label for="productCurrency">Currency</label><select id="productCurrency"><option>USD</option><option>KRW</option><option>EUR</option><option>PKR</option><option>AED</option><option>JPY</option><option>CNY</option><option>Other</option></select></div>
+    <div class="field full"><label for="productDescription">Description *</label><textarea id="productDescription" required maxlength="5000" placeholder="Specifications, quantity, shipping options and terms"></textarea></div>
+    <div class="field full"><label for="productImage">Product photo (optional)</label><input id="productImage" type="file" accept="image/jpeg,image/png,image/webp"></div>
+    <div class="full"><button class="primary" type="submit">Submit for approval</button></div>
+  </form>
+  <div id="sellerMessage" class="status-message" role="status"></div>
+  <h3 style="margin-top:24px">My submitted products</h3>
+  <div id="myProducts" class="muted">Sign in to view your submissions.</div>
+</div>
+<div id="authMessage" class="status-message" role="status" aria-live="polite"></div>
+</section>
+<section class="panel" id="about"><h2>About MERLIN GLOBAL</h2><p class="muted">MERLIN GLOBAL is an international product discovery marketplace connecting buyers and sellers. In this initial version, buyers contact sellers directly. The platform does not process payments, hold funds or arrange shipping.</p><p class="muted">For business inquiries: <a id="adminEmailLink" href="mailto:contact@merlinglobal.example">Contact marketplace team</a></p></section>
+</main>
+<footer><div class="foot"><div><strong>MERLIN GLOBAL</strong><br>Buy Worldwide. Sell Worldwide.</div><div>Independent marketplace directory. Verify suppliers, product compliance, payment terms and shipping arrangements before ordering.<br>© <span id="year"></span> MERLIN GLOBAL</div></div></footer>
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><h3 id="modalTitle">Product details</h3><p id="modalText" class="muted"></p><button class="primary" onclick="closeModal()">Close</button></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// SETUP: Replace this with the marketplace admin WhatsApp number, digits only, including country code.
+const ADMIN_WHATSAPP = "821087826764";
+
+// SUPABASE SETUP: replace both values below with your own project details.
+// Use the Project URL and the DEFAULT PUBLISHABLE key (sb_publishable_...).
+// Never put a Supabase secret/service_role key in this file.
+const SUPABASE_URL = "https://ilwjqjeqbdfvokqchmfd.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_7AfwFGBiF9e79xbigZqQZQ_N57zYFpJ";
+let supabaseClient = null;
+let currentUser = null;
+let databaseProducts = [];
+// Add approved seller products here. Replace sample entries with real products and seller WhatsApp numbers.
+const products = [
+ {id:1,name:"Korean Skincare & Cosmetics",category:"Cosmetics",country:"South Korea",price:"Contact seller for quotation",moq:"MOQ varies",desc:"Beauty and personal-care products from Korean suppliers.",emoji:"🧴",sellerWhatsApp:"",details:"Ask for brand, ingredients, certificates, MOQ and export availability."},
+ {id:2,name:"Industrial Raw Materials",category:"Industrial Materials",country:"South Korea",price:"Contact seller for quotation",moq:"Bulk quantities",desc:"Industrial materials for qualified business buyers.",emoji:"🏭",sellerWhatsApp:"",details:"Request specification, grade, SDS and applicable export documents."},
+ {id:3,name:"Textile Yarn & Fibres",category:"Textiles & Yarn",country:"South Korea",price:"Contact seller for quotation",moq:"By order",desc:"Yarn and fibre sourcing for textile manufacturers and traders.",emoji:"🧵",sellerWhatsApp:"",details:"Request denier, composition, colour, quantity and packing details."},
+ {id:4,name:"Automotive Spare Parts",category:"Automotive Parts",country:"Worldwide",price:"Contact seller for quotation",moq:"Retail and wholesale",desc:"Automotive components and replacement parts.",emoji:"⚙️",sellerWhatsApp:"",details:"Confirm part number, vehicle compatibility, condition and warranty."},
+ {id:5,name:"Electronics & Components",category:"Electronics",country:"Worldwide",price:"Contact seller for quotation",moq:"By order",desc:"Electronics and components for trade and procurement.",emoji:"🔌",sellerWhatsApp:"",details:"Confirm model, specifications, authenticity and compliance."},
+ {id:6,name:"Packaging & Paper Materials",category:"Packaging & Paper",country:"South Korea",price:"Contact seller for quotation",moq:"Bulk quantities",desc:"Paper, packaging and related materials for business buyers.",emoji:"📦",sellerWhatsApp:"",details:"Request GSM, dimensions, grade, packing and shipping terms."}
+];
+let activeCategory="All";
+const categories=["All","Cosmetics","Industrial Materials","Textiles & Yarn","Automotive Parts","Electronics","Packaging & Paper"];
+function safeText(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function digits(v){return String(v||"").replace(/\D/g,"");}
+function renderCategories(){
+ document.getElementById("categories").innerHTML=categories.map(c=>`<button class="chip ${c===activeCategory?"active":""}" onclick="setCategory('${c.replace(/'/g,"\\'")}')">${safeText(c)}</button>`).join("");
+}
+function setCategory(c){activeCategory=c;renderCategories();renderProducts();}
+function renderProducts(){
+ const q=document.getElementById("searchInput").value.toLowerCase().trim();
+ const allProducts=[...databaseProducts,...products]; const filtered=allProducts.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&[p.name,p.category,p.country,p.desc].join(" ").toLowerCase().includes(q));
+ document.getElementById("count").textContent=filtered.length+" listings";
+ document.getElementById("productGrid").innerHTML=filtered.length?filtered.map(p=>`<article class="card"><div class="photo" aria-hidden="true">${p.image_url?`<img src="${safeText(p.image_url)}" alt="" style="width:100%;height:100%;object-fit:cover">`:safeText(p.emoji||"📦")}</div><div class="card-body"><div class="pill">${safeText(p.category)}</div><h3>${safeText(p.name)}</h3><div class="desc">${safeText(p.desc)}</div><div class="meta">🌍 ${safeText(p.country)} · ${safeText(p.moq)}</div><div class="price">${safeText(p.price)}</div><div class="actions"><button class="wa" onclick="contactSeller(${p.id})">WhatsApp seller</button><button class="detail" onclick="showDetails(${p.id})">Details</button></div></div></article>`).join(""):'<div class="empty">No matching products. Try another search or category.</div>';
+}
+function contactSeller(id){
+ const p=[...databaseProducts,...products].find(x=>String(x.id)===String(id));const number=digits(p.sellerWhatsApp);
+ if(!number){alert("Seller WhatsApp is not yet available for this sample listing. Please submit an inquiry through the List your product / contact section.");return;}
+ const msg=`Hello, I found "${p.name}" on MERLIN GLOBAL. Please share your price, MOQ, specifications and shipping options.`;
+ window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank");
+}
+function showDetails(id){const p=[...databaseProducts,...products].find(x=>String(x.id)===String(id));document.getElementById("modalTitle").textContent=p.name;document.getElementById("modalText").textContent=p.details+" Country: "+p.country+". Category: "+p.category+".";document.getElementById("modal").classList.add("show");}
+function closeModal(){document.getElementById("modal").classList.remove("show");}
+document.getElementById("sellerForm").addEventListener("submit",e=>{
+ e.preventDefault();const number=digits(ADMIN_WHATSAPP);
+ if(!number){alert("Marketplace WhatsApp is not configured yet. Add the admin number in the ADMIN_WHATSAPP setting near the top of the page script, then publish again.");return;}
+ const fields={company:document.getElementById("sellerName").value,country:document.getElementById("sellerCountry").value,product:document.getElementById("productName").value,category:document.getElementById("category").value,price:document.getElementById("price").value,sellerWhatsApp:document.getElementById("sellerWhatsApp").value,details:document.getElementById("productInfo").value};
+ const msg="MERLIN GLOBAL — NEW SELLER APPLICATION\n\n"+Object.entries(fields).map(([k,v])=>k+": "+v).join("\n");
+ window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank");
+});
+
+function setAuthMessage(message,isError=false){
+ const el=document.getElementById("authMessage"); el.textContent=message; el.style.color=isError?"#b42318":"#17623b";
+}
+function setupSupabase(){
+ const configured=SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("PASTE_") && SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_");
+ if(!configured || !window.supabase || !window.supabase.createClient){
+   document.getElementById("supabaseSetupNotice").style.display="block";
+   return;
+ }
+ document.getElementById("supabaseSetupNotice").style.display="none";
+ supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+ supabaseClient.auth.getSession().then(({data})=>{currentUser=data.session?.user||null;updateAuthUI();loadApprovedProducts();});
+ supabaseClient.auth.onAuthStateChange((_event,session)=>{currentUser=session?.user||null;updateAuthUI();});
+ loadApprovedProducts();
+}
+function updateAuthUI(){
+ const status=document.getElementById("authStatus");
+ const dashboard=document.getElementById("sellerDashboard");
+ const logout=document.getElementById("logoutButton");
+ if(currentUser){
+   status.textContent="Signed in as "+(currentUser.email||"seller")+". Verify your email if prompted.";
+   dashboard.classList.add("show"); logout.style.display="inline-block";
+   document.getElementById("registerForm").style.display="none";
+   document.getElementById("loginForm").querySelectorAll("input").forEach(el=>el.disabled=true);
+   loadMyProducts();
+ }else{
+   status.textContent="You are not signed in.";
+   dashboard.classList.remove("show"); logout.style.display="none";
+   document.getElementById("registerForm").style.display="grid";
+   document.getElementById("loginForm").querySelectorAll("input").forEach(el=>el.disabled=false);
+ }
+}
+async function loadApprovedProducts(){
+ if(!supabaseClient)return;
+ const {data,error}=await supabaseClient.from("products").select("id,title,description,category,price,currency,image_url,seller_id,created_at").eq("status","approved").order("created_at",{ascending:false}).limit(100);
+ if(error){console.error("Could not load approved products",error);return;}
+ databaseProducts=(data||[]).map(p=>({id:"db-"+p.id,dbId:p.id,name:p.title,category:p.category||"Other",country:"Worldwide",price:p.price==null?"Contact seller":String(p.price)+(p.currency?" "+p.currency:""),moq:"Contact seller",desc:p.description||"",emoji:"📦",sellerWhatsApp:"",details:p.description||"",image_url:p.image_url||""}));
+ renderCategories();renderProducts();
+}
+async function loadMyProducts(){
+ if(!supabaseClient||!currentUser)return;
+ const box=document.getElementById("myProducts");box.textContent="Loading your submissions…";
+ const {data,error}=await supabaseClient.from("products").select("id,title,status,created_at").eq("seller_id",currentUser.id).order("created_at",{ascending:false}).limit(100);
+ if(error){box.textContent="Could not load submissions: "+error.message;return;}
+ if(!data.length){box.textContent="You have not submitted any products yet.";return;}
+ box.innerHTML=data.map(p=>`<div style="padding:10px 0;border-bottom:1px solid #e5ebf0"><strong>${safeText(p.title)}</strong> — <span>${safeText(p.status)}</span></div>`).join("");
+}
+document.getElementById("registerForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!supabaseClient){setAuthMessage("Website connection is not configured yet. Add the Supabase URL and publishable key in the setup section of this file.",true);return;}
+ const full_name=document.getElementById("regName").value.trim(),company_name=document.getElementById("regCompany").value.trim(),country=document.getElementById("regCountry").value.trim(),whatsapp=document.getElementById("regWhatsApp").value.trim(),email=document.getElementById("regEmail").value.trim(),password=document.getElementById("regPassword").value;
+ const {data,error}=await supabaseClient.auth.signUp({email,password,options:{emailRedirectTo:location.origin, data:{full_name,company_name,country,whatsapp}}});
+ if(error){setAuthMessage(error.message,true);return;}
+ if(data.session){currentUser=data.user;updateAuthUI();setAuthMessage("Account created. Welcome to MERLIN GLOBAL!");}
+ else{setAuthMessage("Registration submitted. Check your email to confirm your account, then sign in.");}
+});
+document.getElementById("loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!supabaseClient){setAuthMessage("Website connection is not configured.",true);return;}
+ const email=document.getElementById("loginEmail").value.trim(),password=document.getElementById("loginPassword").value;
+ const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+ if(error){setAuthMessage(error.message,true);return;}
+ currentUser=data.user;updateAuthUI();setAuthMessage("Signed in successfully.");
+});
+document.getElementById("logoutButton").addEventListener("click",async()=>{
+ if(!supabaseClient)return;const {error}=await supabaseClient.auth.signOut();if(error){setAuthMessage(error.message,true);return;}currentUser=null;updateAuthUI();setAuthMessage("You have signed out.");
+});
+document.getElementById("productForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!supabaseClient||!currentUser){setAuthMessage("Please sign in first.",true);return;}
+ const btn=e.submitter; if(btn){btn.disabled=true;btn.textContent="Submitting…";}
+ try{
+   const title=document.getElementById("productName").value.trim();
+   const category=document.getElementById("productCategory").value;
+   const description=document.getElementById("productDescription").value.trim();
+   const priceRaw=document.getElementById("productPrice").value.trim();
+   const currency=document.getElementById("productCurrency").value;
+   let image_url=null;const file=document.getElementById("productImage").files[0];
+   if(file){
+     if(file.size>5*1024*1024)throw new Error("Please use an image smaller than 5 MB.");
+     if(!["image/jpeg","image/png","image/webp"].includes(file.type))throw new Error("Use a JPG, PNG or WebP image.");
+     const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+     const path=currentUser.id+"/"+Date.now()+"-"+safeName;
+     const {error:uploadError}=await supabaseClient.storage.from("product-images").upload(path,file,{upsert:false,contentType:file.type});
+     if(uploadError)throw uploadError;
+     const {data:urlData}=supabaseClient.storage.from("product-images").getPublicUrl(path);
+     image_url=urlData.publicUrl;
+   }
+   const numericMatch=priceRaw.match(/^\s*\d+(?:\.\d+)?\s*$/);
+   const payload={seller_id:currentUser.id,title,description,category,price:numericMatch?Number(priceRaw):null,currency,image_url,status:"pending"};
+   const {error}=await supabaseClient.from("products").insert(payload);
+   if(error)throw error;
+   document.getElementById("productForm").reset();
+   document.getElementById("sellerMessage").textContent="Submitted successfully. Your product is pending admin approval and will appear publicly only after approval.";
+   setAuthMessage("Product submitted for review.");loadMyProducts();
+ }catch(err){setAuthMessage("Could not submit product: "+(err.message||"Unknown error"),true);}
+ finally{if(btn){btn.disabled=false;btn.textContent="Submit for approval";}}
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+renderCategories();renderProducts();setupSupabase();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
+</script>
+</body></html>
